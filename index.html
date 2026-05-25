@@ -165,14 +165,33 @@ Ai, Ai ! Hav ! Hav ! Miyav ! Miyav ! Kukkurukuk ! Kukkurukuk ! (Çocuklarla bir
         </div>
         <script>
             $(document).ready(function() {
-            	$('.prlx_enabler').mousewheel(function(e, delta) {
-            		this.scrollLeft -= (delta * 1);
-            		e.preventDefault();
-            	});
-            	$('.vertical_scroll').mousewheel(function(e, delta) {
-            		this.scrollTop -= (delta * 1);
-            		e.preventDefault();
-            	});
+                var $sceneScroller = $('.prlx_enabler');
+                var $storyScroller = $('.vertical_scroll');
+
+                function syncStoryWithScenes() {
+                    var sceneMax = $sceneScroller[0].scrollWidth - $sceneScroller.innerWidth();
+                    var storyMax = $storyScroller[0].scrollHeight - $storyScroller.innerHeight();
+
+                    if (sceneMax <= 0 || storyMax <= 0) {
+                        return;
+                    }
+
+                    var ratio = $sceneScroller.scrollLeft() / sceneMax;
+                    $storyScroller.scrollTop(ratio * storyMax);
+                }
+
+                $sceneScroller.mousewheel(function(e, delta) {
+                    this.scrollLeft -= (delta * 40);
+                    syncStoryWithScenes();
+                    e.preventDefault();
+                });
+
+                $sceneScroller.on('scroll', syncStoryWithScenes);
+
+                $storyScroller.mousewheel(function(e, delta) {
+                    this.scrollTop -= (delta * 40);
+                    e.preventDefault();
+                });
             });
         </script>
         
