@@ -18,12 +18,12 @@ body * {
     transform-style: preserve-3d;
 }
 .prlx_block_1 {
-    -webkit-transform: translateZ(0.6px) scale(0.9);
-    transform: translateZ(0.6px) scale(0.9);
+    -webkit-transform: translateZ(0.2px) scale(1);
+    transform: translateZ(0.2px) scale(1);
     z-index: 2;
     position: absolute;
-    left: 155px;
-    width: 450px;
+    left: 0;
+    width: calc(450px * 23);
     height: 320px;
     border-radius: 50%;
 }
@@ -110,7 +110,7 @@ body * {
     object-fit: cover;
 }
 .prlx_block_1 {
-    top: -8px;
+    top: 0;
     z-index: 999;
     pointer-events: none;
     white-space: nowrap;
@@ -125,8 +125,8 @@ body * {
 }
 .block_css {
     position: relative;
-    width: 450px;
-    height: 300px;
+    width: min(900px, 92vw);
+    height: 340px;
     overflow: scroll;
     margin: 0 auto;
     font-size: 13px !important;
@@ -166,8 +166,9 @@ p {
     font-size: 14px;
     font-weight: 700;
     color: #545454;
-    margin-left: 20px;
-    margin-bottom: 10px;
+    margin: 0 auto 12px auto;
+    text-align: center;
+    width: min(900px, 92vw);
 }
 .fork_me_btn {
     display: inline-block !important;
