@@ -94,6 +94,30 @@ body * {
     transform-style: preserve-3d;
     white-space: nowrap;
 }
+
+.prlx_enabler {
+    position: relative;
+    height: 320px;
+}
+.content_block {
+    position: relative;
+    z-index: 1;
+}
+.content_block img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.prlx_block_1 {
+    top: -8px;
+    z-index: 6;
+    pointer-events: none;
+}
+.prlx_block_1 img {
+    display: inline-block;
+    vertical-align: top;
+}
 .vertical_scroll {
     position: relative;
     overflow: scroll;
@@ -201,4 +225,28 @@ p {
     line-height: 27px;
     padding: 3px 9px;
     background: #538CC4;
+}
+
+
+body {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    background: #f8f5ef;
+}
+
+h1, .quick_headline {
+    font-family: "Marcellus SC", "Times New Roman", serif;
+    letter-spacing: 0.6px;
+}
+
+.block_css {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px !important;
+    line-height: 31px !important;
+    padding: 16px 18px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+}
+
+.quick_headline {
+    font-size: 22px;
 }
