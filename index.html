@@ -3,16 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Bremen Mızıkacıları</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="js/jquery.mousewheel.js"></script>
     </head>
     <body class="demo_body">
         <h1>Bremen Mızıkacıları</h1>
-        <p class="made_by_me"><a href="https://sanatyasami.net" target="_blank">Made by @sertaca</a></p>
+        <p class="made_by_me"><a href="https://behance.net/sertaca" target="_blank">Made by @sertaca</a></p>
         <div class="user_actions">
-        <a href="https://facebook.com/sertacaydogduuu" class="fork_me_btn" target="_blank">
-        Facebook
+        <a href="https://instagram.com/sertacagah" class="fork_me_btn" target="_blank">
+        Instagram
         </a>
         <a href="https://twitter.com/sertaca" class="download_btn" target="_blank">
         Twitter
@@ -165,14 +168,33 @@ Ai, Ai ! Hav ! Hav ! Miyav ! Miyav ! Kukkurukuk ! Kukkurukuk ! (Çocuklarla bir
         </div>
         <script>
             $(document).ready(function() {
-            	$('.prlx_enabler').mousewheel(function(e, delta) {
-            		this.scrollLeft -= (delta * 1);
-            		e.preventDefault();
-            	});
-            	$('.vertical_scroll').mousewheel(function(e, delta) {
-            		this.scrollTop -= (delta * 1);
-            		e.preventDefault();
-            	});
+                var $sceneScroller = $('.prlx_enabler');
+                var $storyScroller = $('.vertical_scroll');
+
+                function syncStoryWithScenes() {
+                    var sceneMax = $sceneScroller[0].scrollWidth - $sceneScroller.innerWidth();
+                    var storyMax = $storyScroller[0].scrollHeight - $storyScroller.innerHeight();
+
+                    if (sceneMax <= 0 || storyMax <= 0) {
+                        return;
+                    }
+
+                    var ratio = $sceneScroller.scrollLeft() / sceneMax;
+                    $storyScroller.scrollTop(ratio * storyMax);
+                }
+
+                $sceneScroller.mousewheel(function(e, delta) {
+                    this.scrollLeft -= (delta * 40);
+                    syncStoryWithScenes();
+                    e.preventDefault();
+                });
+
+                $sceneScroller.on('scroll', syncStoryWithScenes);
+
+                $storyScroller.mousewheel(function(e, delta) {
+                    this.scrollTop -= (delta * 40);
+                    e.preventDefault();
+                });
             });
         </script>
         
