@@ -242,8 +242,8 @@ h1, .quick_headline {
 
 .block_css {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 21px !important;
-    line-height: 31px !important;
+    font-size: 26px !important;
+    line-height: 40px !important;
     padding: 16px 18px;
     background: rgba(255,255,255,0.92);
     border-radius: 10px;
