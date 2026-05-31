@@ -49,19 +49,31 @@
         <br>
         <div class="quick_headline">Bir eşek, bir köpek, bir kedi ve bir horoz yaşarmış...</div>
         <div class="vertical_scroll block_css">
-            <p>Yaşlanan eşek artık değirmende çalışamayacağını anlayınca Bremen'e gidip müzisyen olmaya karar verir.</p>
+            <p>Bir zamanlar, yıllarca değirmencinin un çuvallarını taşıyan yaşlı bir eşek varmış. Artık eskisi kadar güçlü olmadığını anlayan sahibi onu gözden çıkarınca eşek sessizce yola koyulmuş.</p>
 
-            <p>Yolda önce avlanmak istemeyen köpeğe, sonra evinden kaçan kediye ve kesilmekten korkan horoza rastlar.</p>
+            <p>“Bremen'e gider, şehir bandosunda müzisyen olurum,” diye düşünmüş. Ormana yaklaşırken bir ağacın altında üzgün üzgün inleyen bir köpekle karşılaşmış.</p>
 
-            <p>Dört arkadaş güçlerini birleştirip Bremen yoluna çıkar. Akşam bastırınca ormanda ışıkları yanan küçük bir ev görürler.</p>
+            <p>Köpek, avlanmayı sevmediği için sahibinin onu istemediğini anlatmış. Eşek ona, “Benimle gel, Bremen'de birlikte müzik yaparız,” demiş. Böylece ikisi yola devam etmiş.</p>
 
-            <p>Evin içinde haydutlar yemek yiyip eğlenmektedir. Hayvanlar üst üste çıkar, pencereye dayanır ve hep birlikte öyle gürültülü bağırırlar ki haydutlar korkuyla ormana kaçar.</p>
+            <p>Biraz sonra acı acı miyavlayan bir kedi görmüşler. Kedi de yaşlandığı için evinde sevilmediğini, kendine yeni bir yer aradığını söylemiş. Eşek ve köpek onu da yanlarına almış.</p>
 
-            <p>Karınlarını doyuran eşek, köpek, kedi ve horoz evde uykuya dalar. Gece geri dönen bir haydut, karanlıkta kedinin gözlerini köz sanır.</p>
+            <p>Üç arkadaş bir çiftliğin önünden geçerken var gücüyle öten bir horozun sesini duymuş. Horoz, sahiplerinin onu kesmeye karar verdiğini anlatınca ekip tamamlanmış: eşek, köpek, kedi ve horoz Bremen yoluna çıkmış.</p>
 
-            <p>Kedi onu tırmalar, köpek bacağını ısırır, eşek tekme atar, horoz da çatıdan var gücüyle öter. Haydut arkadaşlarının yanına dönüp evde korkunç yaratıklar olduğunu anlatır.</p>
+            <p>Akşam karanlığı bastırınca ormanda dinlenmek için durmuşlar. Horoz yüksek bir dala çıkmış ve uzakta ışıkları yanan küçük bir ev görmüş. Aç ve yorgun oldukları için hep birlikte eve doğru yürümüşler.</p>
 
-            <p>Haydutlar bir daha geri gelmez. Dört Bremen Mızıkacısı da bu sıcak evde kalır; dostlukları ve şarkılarıyla mutlu bir hayat sürerler.</p>
+            <p>Pencereden baktıklarında içeride haydutların yemek yiyip altınlarını saydığını görmüşler. Dört arkadaş eve girebilmek için bir plan yapmış: köpek eşeğin sırtına, kedi köpeğin sırtına, horoz da kedinin başına çıkmış.</p>
+
+            <p>Sonra hep birlikte bağırmaya başlamışlar: eşek anırmış, köpek havlamış, kedi miyavlamış, horoz da kukurukuu diye ötmüş. Gürültüyle pencereye dayanınca camlar kırılmış, haydutlar korkudan ormana kaçmış.</p>
+
+            <p>Hayvanlar içeri girip karınlarını doyurmuş. Eşek avluda, köpek kapının arkasında, kedi ocağın yanında, horoz da çatıda kendine rahat bir yer bulup uykuya dalmış.</p>
+
+            <p>Gece yarısı haydutlardan biri eve dönüp neler olduğunu anlamak istemiş. Karanlıkta kedinin gözlerini köz sanıp yaklaşınca kedi yüzünü tırmalamış, köpek bacağını ısırmış, eşek ona güçlü bir tekme atmış.</p>
+
+            <p>Tam kaçarken horoz da çatıdan öyle gürültülü ötmüş ki haydut dehşet içinde arkadaşlarının yanına dönmüş. Evde cadılar, devler ve korkunç yaratıklar olduğunu söyleyince haydutlar bir daha oraya yaklaşmamış.</p>
+
+            <p>Dört arkadaş o küçük evi çok sevmiş. Bremen'e gitmeden de birlikte yaşayabileceklerini anlamışlar; dostlukları, cesaretleri ve neşeli sesleriyle orada mutlu bir hayat kurmuşlar.</p>
+
+            <p>Eğer bir gün o ormandan geçerseniz, belki uzaktan onların konserini duyarsınız: “Ai ai! Hav hav! Miyav miyav! Kukurukuu!”</p>
 
             <p class="story_end">SON</p>
 
@@ -71,9 +83,8 @@
                 var $sceneScroller = $('.prlx_enabler');
                 var $storyScroller = $('.vertical_scroll');
 
-                var IMAGE_SCROLL_SPEED = 24;
+                var IMAGE_SCROLL_SPEED = 40;
                 var TEXT_SCROLL_SPEED = 72;
-                var isSyncing = false;
 
                 function getScrollRanges() {
                     return {
@@ -83,35 +94,13 @@
                 }
 
                 function syncStoryWithScenes() {
-                    if (isSyncing) {
-                        return;
-                    }
-
                     var ranges = getScrollRanges();
                     if (ranges.sceneMax <= 0 || ranges.storyMax <= 0) {
                         return;
                     }
 
                     var ratio = $sceneScroller.scrollLeft() / ranges.sceneMax;
-                    isSyncing = true;
                     $storyScroller.scrollTop(ratio * ranges.storyMax);
-                    isSyncing = false;
-                }
-
-                function syncScenesWithStory() {
-                    if (isSyncing) {
-                        return;
-                    }
-
-                    var ranges = getScrollRanges();
-                    if (ranges.sceneMax <= 0 || ranges.storyMax <= 0) {
-                        return;
-                    }
-
-                    var ratio = $storyScroller.scrollTop() / ranges.storyMax;
-                    isSyncing = true;
-                    $sceneScroller.scrollLeft(ratio * ranges.sceneMax);
-                    isSyncing = false;
                 }
 
                 $sceneScroller.mousewheel(function(e, delta) {
@@ -124,7 +113,6 @@
 
                 $storyScroller.mousewheel(function(e, delta) {
                     this.scrollTop -= (delta * TEXT_SCROLL_SPEED);
-                    syncScenesWithStory();
                     e.preventDefault();
                 });
 

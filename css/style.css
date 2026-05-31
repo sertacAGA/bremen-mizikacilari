@@ -23,8 +23,8 @@ body * {
     z-index: 2;
     position: absolute;
     left: 320px;
-    width: calc(450px * 23);
-    height: 320px;
+    width: calc(590px * 23);
+    height: 420px;
     border-radius: 50%;
 }
 
@@ -34,8 +34,8 @@ body * {
     z-index: 3;
     position: absolute;
     left: 455px;
-    width: 450px;
-    height: 320px;
+    width: 590px;
+    height: 420px;
     border-radius: 50%;
 }
 .prlx_block_3 {
@@ -64,8 +64,8 @@ body * {
 }
 .content_block {
     display: inline-block;
-    width: 450px;
-    height: 320px;
+    width: 590px;
+    height: 420px;
     margin-left: -3px;
     z-index: -99;
     opacity: 1;
@@ -97,7 +97,7 @@ body * {
 
 .prlx_enabler {
     position: relative;
-    height: 320px;
+    height: 420px;
 }
 .content_block {
     position: relative;
@@ -117,6 +117,9 @@ body * {
 }
 .prlx_block_1 img {
     display: inline-block;
+    width: 590px;
+    height: 420px;
+    object-fit: contain;
     vertical-align: top;
 }
 .vertical_scroll {
@@ -126,7 +129,7 @@ body * {
 .block_css {
     position: relative;
     width: min(900px, 92vw);
-    height: 340px;
+    height: 400px;
     overflow: scroll;
     margin: 0 auto;
     font-size: 13px !important;
