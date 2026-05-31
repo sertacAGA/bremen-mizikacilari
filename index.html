@@ -115,6 +115,8 @@
                     this.scrollTop -= (delta * TEXT_SCROLL_SPEED);
                     e.preventDefault();
                 });
+
+                $storyScroller.on('scroll', syncScenesWithStory);
             });
         </script>
         
