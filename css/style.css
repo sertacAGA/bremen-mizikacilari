@@ -27,7 +27,6 @@ body * {
     height: 420px;
     border-radius: 50%;
 }
-
 .prlx_block_2 {
     -webkit-transform: translateZ(0.2px) scale(0.8);
     transform: translateZ(0.2px) scale(0.8);
@@ -70,18 +69,10 @@ body * {
     z-index: -99;
     opacity: 1;
 }
-.slack_blue {
-    background-color: #6ecadc;
-}
-.slack_green {
-    background-color: #3eb991;
-}
-.slack_red {
-    background-color: #e01563;
-}
-.slack_yellow {
-    background-color: #e9a820;
-}
+.slack_blue { background-color: #6ecadc; }
+.slack_green { background-color: #3eb991; }
+.slack_red { background-color: #e01563; }
+.slack_yellow { background-color: #e9a820; }
 .horizontal_scroll {
     overflow: hidden;
     width: auto;
@@ -93,9 +84,6 @@ body * {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     white-space: nowrap;
-}
-
-.prlx_enabler {
     position: relative;
     height: 420px;
 }
@@ -139,10 +127,6 @@ body * {
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
     white-space: normal;
 }
-
-
-/* For Demo Purpose*/
-
 h1 {
     color: #2E3B4E;
     font-weight: 300;
@@ -150,9 +134,7 @@ h1 {
     margin-top: 40px;
     margin-bottom: 10px;
 }
-h2 {
-    font-weight: 300;
-}
+h2 { font-weight: 300; }
 .made_by_me {
     color: #2E3B4E;
     font-weight: 300;
@@ -179,16 +161,8 @@ p {
     font-size: 13px;
     color: rgb(110, 114, 122);
     border-width: 1px;
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
     background: -webkit-linear-gradient(top, #fcfcfc, #f0f0f0);
-    border-image: none;
     border-radius: 3px;
-    background: transparent -moz-linear-gradient(center top, rgb(252, 252, 252), rgb(240, 240, 240)) repeat scroll 0% 0%;
-    background: -moz-linear-gradient(top, #fcfcfc, #f0f0f0);
-    background: -ms-linear-gradient(top, #fcfcfc, #f0f0f0);
     line-height: 27px;
     padding: 3px 9px;
     height: auto;
@@ -200,10 +174,7 @@ p {
     border-color: #CCCECF;
     border-style: solid;
     min-width: 40px;
-    margin-right: 3px;
     text-decoration: none;
-    border: 1px solid rgb(204, 206, 207);
-    margin-right: 15px;
 }
 .user_actions {
     position: relative;
@@ -214,56 +185,44 @@ p {
     text-align: center;
 }
 .download_btn {
-    background: -moz-linear-gradient(center bottom, #508BC2, #5A94CA) repeat scroll 0 0 transparent;
     text-decoration: none;
     color: #FFF;
     display: inline-block;
     vertical-align: middle;
-    background: -moz-linear-gradient(center top, #538CC4, #4781B9) repeat scroll 0 0 transparent;
     border: 1px solid #396C9D;
     border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.11), 0px 1px 1px rgba(175, 207, 235, 0.14) inset;
-    text-shadow: 0 -1px 0 #457BAC;
-    color: #FFF;
     font-weight: 700;
     font-size: 13px;
     line-height: 27px;
     padding: 3px 9px;
     background: #538CC4;
 }
-
-
 body {
     font-family: "Cormorant Garamond", Georgia, serif;
     background: #f8f5ef;
 }
-
 h1, .quick_headline {
     font-family: "Marcellus SC", "Times New Roman", serif;
     letter-spacing: 0.6px;
 }
-
 .block_css {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 20px !important;
-    line-height: 30px !important;
-    padding: 22px 32px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    padding: 18px 26px;
     background: rgba(255,255,255,0.92);
     border-radius: 10px;
 }
-
 .quick_headline {
-    font-size: 18px;
+    font-size: 16px;
 }
-
 .block_css p {
     max-width: 760px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 16px auto;
     text-align: center;
-    font-size: 20px !important;
-    line-height: 30px !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
 }
-
 .block_css .story_end {
     font-family: "Marcellus SC", "Times New Roman", serif;
     font-weight: 700;
