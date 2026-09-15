@@ -63,28 +63,49 @@ $(document).ready(function() {
     var $storyScroller = $('.vertical_scroll');
     var IMAGE_SCROLL_SPEED = 40;
     var TEXT_SCROLL_SPEED = 72;
+    var isSyncing = false;
+
     function getScrollRanges() {
         return {
-            sceneMax: $sceneScroller[0].scrollWidth - $sceneScroller.innerWidth(),
-            storyMax: $storyScroller[0].scrollHeight - $storyScroller.innerHeight()
+            sceneMax: Math.max(0, $sceneScroller[0].scrollWidth - $sceneScroller.innerWidth()),
+            storyMax: Math.max(0, $storyScroller[0].scrollHeight - $storyScroller.innerHeight())
         };
     }
+
     function syncStoryWithScenes() {
+        if (isSyncing) return;
         var ranges = getScrollRanges();
         if (ranges.sceneMax <= 0 || ranges.storyMax <= 0) return;
         var ratio = $sceneScroller.scrollLeft() / ranges.sceneMax;
+        isSyncing = true;
         $storyScroller.scrollTop(ratio * ranges.storyMax);
+        isSyncing = false;
     }
+
+    function syncScenesWithStory() {
+        if (isSyncing) return;
+        var ranges = getScrollRanges();
+        if (ranges.sceneMax <= 0 || ranges.storyMax <= 0) return;
+        var ratio = $storyScroller.scrollTop() / ranges.storyMax;
+        isSyncing = true;
+        $sceneScroller.scrollLeft(ratio * ranges.sceneMax);
+        isSyncing = false;
+    }
+
     $sceneScroller.mousewheel(function(e, delta) {
         this.scrollLeft -= (delta * IMAGE_SCROLL_SPEED);
         syncStoryWithScenes();
         e.preventDefault();
     });
+
     $sceneScroller.on('scroll', syncStoryWithScenes);
+
     $storyScroller.mousewheel(function(e, delta) {
         this.scrollTop -= (delta * TEXT_SCROLL_SPEED);
+        syncScenesWithStory();
         e.preventDefault();
     });
+
     $storyScroller.on('scroll', syncScenesWithStory);
 });
 </script>
